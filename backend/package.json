@@ -7,8 +7,10 @@
   },
   "private": true,
   "scripts": {
-    "dev": "concurrently 'bun --watch src/app.ts' 'bun --watch src/index.ts'",
-    "prod": "NODE_ENV=production bun src/index.ts"
+    "develop:idx": "NODE_ENV=development bun --watch src/index.ts",
+    "develop:app": "NODE_ENV=development bun --watch src/app.ts",
+    "prod": "NODE_ENV=production bun src/index.ts",
+    "dev": "concurrently 'bun run develop:app' 'bun run develop:idx'"
   },
   "devDependencies": {
     "@types/bun": "latest",
